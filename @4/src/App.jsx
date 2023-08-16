@@ -10,7 +10,7 @@ function App() {
     <>
       <div>
         <header>
-    <h1>Color Battle</h1>
+    <h1>Color Battle ?</h1>
 
         </header>
       </div>
