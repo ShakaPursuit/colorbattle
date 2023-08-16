@@ -11,8 +11,8 @@ function App() {
 
    const[playerTrue, SetPlayerTrue]=useState("Attack!💫")
   const[playerFalse,SetPlayerFalse]=useState([])
-  const[reallyTrue,SetReallyTrue]=useState("true")
-  const[reallyFalse,SetReallyFalse]=useState("false")
+  const[reallyTrue,SetReallyTrue]=useState("true✅")
+  const[reallyFalse,SetReallyFalse]=useState("false❌")
 
   const[p1,Setp1]=useState(
 
