@@ -39,7 +39,7 @@ const[p2,Setp2]=useState(
 
   return (
     <>
-      <div>
+      <div>g
         <header>
     <h1>Color Battle ?</h1>
 
