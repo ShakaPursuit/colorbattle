@@ -7,25 +7,35 @@ import {Row,Col} from 'react-bootstrap'
 function App() {
   const [count, setCount] = useState(0)
 
-  const[playerTrue, SetPlayerTrue]=useState(<button>Attack!💫</button>)
+   const Shaka= document.querySelector('div.player1')
 
- const player1 = {
+   const[playerTrue, SetPlayerTrue]=useState("Attack!💫")
+  const[playerFalse,SetPlayerFalse]=useState([])
+  const[reallyTrue,SetReallyTrue]=useState("true")
+  const[reallyFalse,SetReallyFalse]=useState("false")
+
+  const[p1,Setp1]=useState(
+
+{
     name: "Shaka",
     color: "orchid",
     hitpoints: 100,
-    turn: playerTrue,
-};
+    turn: reallyTrue,
+
+});
+
+const[p2,Setp2]=useState(
   
- const  player2 = {
+{
     name: "Jamal",
     color: "cornflowerblue",
     hitpoints: 100,
-    turn: false,
-  };
+    turn: reallyFalse,
+  });
   
   const dice = 0;
   
-  const player1Turn = true;
+  // const player1Turn = true;
 
   return (
     <>
@@ -41,9 +51,11 @@ function App() {
         
          
           
-          <h1>{player1.name}</h1>
-          <h2>HitPoints:{player1.hitpoints}</h2>
-          <h1>{player1.turn}</h1>
+          <h1>{p1.name}</h1>
+          <h2>HitPoints:{p1.hitpoints}</h2>
+          <h1>my Turn:{p1.turn ? reallyTrue:reallyFalse}</h1>
+          <div className='player1'><button onClick="">{playerTrue}</button></div>
+          {/* <button onClick={player2.turn=reallyTrue}>Attack!💫</button> */}
        
           
       </div>
@@ -53,8 +65,10 @@ function App() {
         
          
           
-        <h1>{player2.name}</h1>
-        <h2>HitPoints:{player2.hitpoints}</h2>
+        <h1>{p2.name}</h1>
+        <h2>HitPoints:{p2.hitpoints}</h2>
+        <h1>my Turn: {p2.turn ? reallyFalse:reallyTrue}</h1>
+        <div className='player2'><button>{playerFalse}</button></div>
      
         
     </div>
