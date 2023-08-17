@@ -60,10 +60,37 @@ const[p2,Setp2]=useState(
 
     }
   }
+const handleShaka=(e)=>{
+  e.preventDefault()
+  
+  // const SHakasGo= document.querySelector("button.Shaka")
 
+  // p1.turn ? SHakasGo.setAttribute=playerFalse:null
+
+ Setp1(
+ p1.turn= "reallyFalse")
+ Setp2(
+  p2.turn= "reallyTrue")
+
+
+  
+
+
+
+  
+  
+  
+  }
+
+
+
+
+
+
+const handleJamal=()=>{console.log('button clicked')}
   return (
     <>
-      <div>g
+      <div>
         <header>
     <h1>Color Battle !</h1>
 
@@ -78,8 +105,10 @@ const[p2,Setp2]=useState(
           <h1>{p1.name}</h1>
           <h2>HitPoints:{p1.hitpoints}</h2>
           <h1>my Turn:{p1.turn ? reallyTrue:reallyFalse}</h1>
-          <div className='player1'><button onClick="">{playerTrue}</button></div>
+          <div className='player1'></div>
           {/* <button onClick={player2.turn=reallyTrue}>Attack!💫</button> */}
+
+          <div><button className='Shaka' type="click" onClick={handleShaka}>{playerTrue}</button></div>
        
           
       </div>
@@ -92,7 +121,7 @@ const[p2,Setp2]=useState(
         <h1>{p2.name}</h1>
         <h2>HitPoints:{p2.hitpoints}</h2>
         <h1>my Turn: {p2.turn ? reallyFalse:reallyTrue}</h1>
-        <div className='player2'><button>{playerFalse}</button></div>
+        <div className='player2'><button className='Jamal' onClick={handleJamal}>{playerFalse}</button></div>
      
         
     </div>
