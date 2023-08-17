@@ -15,8 +15,9 @@ function App() {
   const[reallyFalse,SetReallyFalse]=useState("false❌")
   const[reallyTrue2,SetReallyTrue2]=useState("true✅")
   const[reallyFalse2,SetReallyFalse2]=useState("false❌")
-  const[hitPoints,SetHitPoints]=useState(100)
-  const[hitPoints2,SetHitPoints2]=useState(100)
+  const[hitPoints,SetHitPoints]=useState(10)
+  const[hitPoints2,SetHitPoints2]=useState(10)
+  const[win,SetWin]=useState(0)
   
 
 //   const[p1,Setp1]=useState(
@@ -65,6 +66,12 @@ function App() {
 
     }
   }
+
+  function showPrompt() {
+    const message = "Game Over! Your score is 0. Play again?";
+
+    return message
+  }
 const handleShaka=(e)=>{
   e.preventDefault()
   
@@ -72,18 +79,25 @@ const handleShaka=(e)=>{
    const JamalsGo=document.querySelector('button.Jamal')
    
 
-  // p1.turn ? SHakasGo.setAttribute=playerFalse:null
+  
 
-  // if(p1.turn==="reallyTrue"){
+  
 
-   SetHitPoints(hitPoints -4)
+  const ShakasValue= SetHitPoints(hitPoints -Math.floor(Math.random() * 10))
 
-
+// const Shak= document.querySelector('h2.Shaka').textContent
    SetReallyTrue(reallyFalse)
    SetReallyFalse2(reallyTrue2)
+   SetWin(ShakasValue)
   
   ShakasGo.setAttribute("hidden","hidden")
   JamalsGo.removeAttribute("hidden")
+
+  if(hitPoints<0){
+
+    prompt('You WINNNNN  Shaka 🤣')
+  }
+
  
   
   
@@ -98,9 +112,10 @@ const handleShaka=(e)=>{
      const ShakasGo= document.querySelector("button.Shaka")
      const JamalsGo=document.querySelector('button.Jamal')
 
-     SetHitPoints2(hitPoints2 -4)
+    const JamalsValue= SetHitPoints2(hitPoints2 -Math.floor(Math.random() * 10))
      SetReallyTrue(reallyTrue2)
    SetReallyFalse2(reallyFalse)
+  //  SetWin(JamalsValue)
 
 
   
@@ -108,6 +123,10 @@ const handleShaka=(e)=>{
   
     JamalsGo.setAttribute("hidden","hidden")
      ShakasGo.removeAttribute("hidden")
+     if(hitPoints2<0){
+
+     prompt('You WINNNNN Jamal  💫')
+       }
    
   
     
@@ -182,6 +201,7 @@ return(<><div>
       <div>
         <header>
     <h1>Color Battle !</h1>
+    {win}
 
         </header>
       </div>
@@ -197,8 +217,8 @@ return(<><div>
          
           
          
-          <h2>HitPoints:{hitPoints}</h2>
-          <h2>{reallyTrue}</h2>
+          <h2 className='Shaka'>{hitPoints}</h2>
+          <h2>My Turn= {reallyTrue}</h2>
            
           <div className='player1'></div>
             <button  className="Shaka" onClick={handleShaka}>Attack!💫</button>  
@@ -212,8 +232,8 @@ return(<><div>
         
          
           
-        <h2>HitPoints:{hitPoints2}</h2>
-        <h2>{reallyFalse2}</h2>
+        <h2 className='Jamal'>HitPoints:{hitPoints2}</h2>
+        <h2>My turn = {reallyFalse2}</h2>
          
         <div className='player2'>
         
