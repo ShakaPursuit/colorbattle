@@ -198,10 +198,11 @@ return(<><div>
 
   return (
     <>
+    <div className='border'>
       <div>
         <header>
     <h1>Color Battle !</h1>
-    {win}
+   
 
         </header>
       </div>
@@ -225,6 +226,8 @@ return(<><div>
        
           
       </div>
+      </div>
+      <div className='border2'>
           
         <h1>Jamal</h1>
           
@@ -244,7 +247,7 @@ return(<><div>
           
           
      
-        
+          </div>
     </div>
         
         
